@@ -15,3 +15,4 @@ If you are developing a production application, we recommend using TypeScript wi
 # FlexiHelp
 A WebApp build using React.js and TailwindCSS, used to connect a service provider and a customer.
 >>>>>>> 096005e69d068eb1ddb158f9cac8a224a61eeb4d
+
