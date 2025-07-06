@@ -1,4 +1,4 @@
-🛠>>> FlexiHelp Web App
+>>>> FlexiHelp Web App
 
 **FlexiHelp** is a modern, responsive web application that connects users with trusted service providers (e.g. electricians, carpenters, mechanics) near them. Designed for speed, reliability, and ease of use, FlexiHelp simplifies the process of finding, booking, and reviewing service professionals — all in one platform.
 
