@@ -1,18 +1,23 @@
-<<<<<<< HEAD
-# React + Vite
+🛠>>> FlexiHelp Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FlexiHelp** is a modern, responsive web application that connects users with trusted service providers (e.g. electricians, carpenters, mechanics) near them. Designed for speed, reliability, and ease of use, FlexiHelp simplifies the process of finding, booking, and reviewing service professionals — all in one platform.
 
-Currently, two official plugins are available:
+>>>> Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive landing page with intuitive layout
+- Dynamic display of nearby service providers with custom icons and distances
+- Reusable service card components built in React
+- Integrated search bar with icon
+- Static ratings & future-ready review system
+- Planned authentication (email, Google sign-in)
+- Scalable layout for future sections (about, services, FAQs)
 
-## Expanding the ESLint configuration
+>>>> Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# FlexiHelp
-A WebApp build using React.js and TailwindCSS, used to connect a service provider and a customer.
->>>>>>> 096005e69d068eb1ddb158f9cac8a224a61eeb4d
+- React.js – Component-based frontend framework
+- Tailwind CSS – Utility-first styling for fast, responsive design
+- Vite – Lightning-fast frontend build tool
+- Git & GitHub – Version control and collaboration
+- React Router (planned) – Page routing and navigation
+- Firebase/Auth (planned) – Authentication and database
 
