@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import searchIcon from "../assets/icons/search.svg";
+import searchIcon from "../assets/search_icon.png";
 
 export default function Navbar() {
     return (
@@ -9,7 +9,7 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <div className="flex-1 flex justify-start">
-                    <div className="text-xl font-bold text-[#0F172A]">LOGO</div>
+                    <div className="text-xl font-bold text-[#095CAF]">LOGO</div>
                 </div>
 
                 {/* Search Bar */}
@@ -21,7 +21,7 @@ export default function Navbar() {
                             className="pl-12 pr-4 py-2 w-full border rounded-full text-sm outline-none text-[#0F172A]"
                         />
                         <span className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                            <img src={""} alt="Search" className="h-5 w-5 opacity-60" />
+                            <img src={searchIcon} alt="Search" className="h-5 w-5 opacity-60" />
                         </span>
                     </div>
                 </div>
@@ -38,10 +38,10 @@ export default function Navbar() {
 
                 {/* Auth Buttons */}
                 <div className="flex-1 flex justify-end gap-3">
-                    <button className="border border-blue-600 text-blue-600 px-7 py-1.5 rounded-full text-sm">
+                    <button className="border border-[#095CAF] text-[#095CAF] px-7 py-1.5 rounded-full text-sm">
                         Log In
                     </button>
-                    <button className="bg-blue-700 text-white px-7 py-1.5 rounded-full text-sm">
+                    <button className="bg-[#095CAF] text-white px-7 py-1.5 rounded-full text-sm">
                         Sign Up
                     </button>
                 </div>
