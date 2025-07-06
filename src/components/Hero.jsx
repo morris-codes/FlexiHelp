@@ -11,19 +11,19 @@ export default function Hero() {
             {/*Hero Section*/}
             <div className="text-center max-w-3xl mx-auto">
                 <h1 className="text-5xl md:text-5xl font-medium leading-snug mt-15">
-                    <span className="text-yellow-500">Need Help?</span> <span className="text-blue-700">Get it done{" "}
+                    <span className="text-yellow-500">Need Help?</span> <span className="text-[#095CAF]">Get it done{" "}
                         <br className="hidden md:block" />
                     with professionals!</span>
                 </h1>
-                <p className="mt-8 text-base text-blue-700 font-semibold md:text-lg">
+                <p className="mt-8 text-base text-[#095CAF] font-semibold md:text-lg">
                     Whether it’s a quick fix or a deep clean, Flexihelp connects you <br /> with
                     trusted service providers nearby. One time job, zero hassle.
                 </p>
                 <div className="mt-6 flex justify-center gap-4 flex-wrap">
-                    <button className="bg-blue-700 text-white px-14 py-2 rounded-2xl text-sm hover:bg-blue-800 font-semibold transition">
+                    <button className="bg-[#095CAF] text-white px-14 py-2 rounded-2xl text-sm hover:bg-blue-800 font-semibold transition">
                         Book A Trusted Helper <span><img src="" alt="" /></span>
                     </button>
-                    <button className="border border-blue-700 text-blue-700 px-14 py-2 font-semibold rounded-2xl text-sm hover:bg-blue-50 transition">
+                    <button className="border border-[#095CAF] text-[#095CAF] px-14 py-2 font-semibold rounded-2xl text-sm hover:bg-blue-50 transition">
                         Become A Service Provider
                     </button>
                 </div>
@@ -31,10 +31,10 @@ export default function Hero() {
 
             {/* Image Section */}
             <div className="mt-14 flex justify-between gap-6 flex-wrap">
-                <div className="w-56 h-80 rounded-xl overflow-hidden mt-4">
+                <div className="w-56 h-80 rounded-xl overflow-hidden">
                     <img src={image1} alt="Provider 1" className="w-full h-full object-cover" />
                 </div>
-                <div className="w-56 h-80 rounded-xl overflow-hidden mt-2">
+                <div className="w-56 h-80 rounded-xl overflow-hidden">
                     <img src={image2} alt="Provider 2" className="w-full h-full object-cover" />
                 </div>
                 <div className="w-56 h-80 rounded-xl overflow-hidden">
