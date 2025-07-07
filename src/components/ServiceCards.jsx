@@ -3,10 +3,6 @@ import icon1 from "../assets/electric_service.png";
 import icon2 from "../assets/mechanic_service.png";
 import icon3 from "../assets/carpenter_service.png";
 import locationIcon from "../assets/location_icon.png";
-import serviceIcon1 from "../assets/srch_service.png";
-import serviceIcon2 from "../assets/community_service.png";
-import serviceIcon3 from "../assets/book_service.png";
-import serviceIcon4 from "../assets/rate_service.png";
 
 export default function ServiceCards() {
 
@@ -71,7 +67,7 @@ export default function ServiceCards() {
 
             {/* Sign up text */}
             <div className="mt-8 text-right text-xs text-gray-500">
-                <button className="inline-flex items-center font-bold gap-1 hover:text-blue-600 transition">
+                <button className="inline-flex items-center font-bold gap-1 hover:text-[#095CAF] transition">
                     Sign up to see more →
                 </button>
             </div>
