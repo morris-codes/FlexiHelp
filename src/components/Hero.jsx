@@ -6,6 +6,7 @@ import image4 from "../assets/cleaner.png";
 
 
 export default function Hero() {
+    
     return (
         <section className="w-full min-h-screen bg-white text-[#0F172A] px-6 md:px-16 py-10">
             {/*Hero Section*/}

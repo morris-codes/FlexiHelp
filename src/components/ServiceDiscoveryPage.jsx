@@ -190,7 +190,8 @@
 // export default ServiceDiscoveryPage;
 
 
-import React from 'react';
+import React, { useState } from 'react';
+import SignupModal from "../components/SignUp";
 import { FaStar, FaHeart, FaMapMarkerAlt, FaUserCircle, FaSignOutAlt } from 'react-icons/fa';
 import { FiBookmark, FiSearch } from 'react-icons/fi';
 
@@ -210,6 +211,13 @@ import chef from '../assets/chef.jpg';
 import flexihelpLogo from '../assets/flexihelp.jpg'; // Make sure this image is inside your assets folder
 
 const ServiceDiscoveryPage = () => {
+
+  const [isSignupOpen, setSignupOpen] = useState(false);
+
+  const handleHireNowClick = () => {
+  setSignupOpen(true);
+  };
+  
   const topRated = [
     { id: 1, name: 'Nk Cleaners', image: cleaner, description: 'Squeaky clean services only. Let’s give your space the thorough cleaning it needs', rating: 4.9 },
     { id: 2, name: 'MUA In Lagos', image: makeover, description: 'Allow us give you the makeover of a lifetime. Every brush and stroke to amplify your beauty', rating: 4.8 },
@@ -233,7 +241,7 @@ const ServiceDiscoveryPage = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* ✅ Custom Inline Navbar */}
+      {/* Custom Inline Navbar */}
   <nav className="w-full px-6 md:px-16 py-4 bg-white shadow-sm border-b border-gray-200">
   <div className="flex items-center justify-between gap-4">
 
@@ -270,7 +278,7 @@ const ServiceDiscoveryPage = () => {
 
     {/* Buttons */}
     <div className="flex-1 flex justify-end gap-3">
-      <button className="flex items-center gap-1 bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm hover:bg-blue-600">
+      <button  onClick={() => setSignupOpen(true)} className="flex items-center gap-1 bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm hover:bg-blue-600">
         <FaUserCircle />
         Account
       </button>
@@ -326,7 +334,7 @@ const ServiceDiscoveryPage = () => {
                 <FiBookmark className="text-gray-400 hover:text-blue-500 cursor-pointer" />
               </div>
               <div className="flex flex-wrap items-center text-sm gap-2">
-                <button className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Hire Now</button>
+                <button  onClick={handleHireNowClick} className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Hire Now</button>
                 <button className="border border-blue-500 text-blue-500 px-3 py-1 rounded-md hover:bg-blue-50 ml-auto">View Details</button>
               </div>
             </div>
@@ -353,7 +361,7 @@ const ServiceDiscoveryPage = () => {
                 <FiBookmark className="text-gray-400 hover:text-blue-500 cursor-pointer" />
               </div>
               <div className="flex flex-wrap items-center text-sm gap-2">
-                <button className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Hire Now</button>
+                <button  onClick={handleHireNowClick} className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Hire Now</button>
                 <button className="border border-blue-500 text-blue-500 px-3 py-1 rounded-md hover:bg-blue-50 ml-auto">View Details</button>
               </div>
             </div>
@@ -423,6 +431,7 @@ const ServiceDiscoveryPage = () => {
           <p className="text-xs text-center">© FlexiHelp 2025 All Rights Reserved</p>
         </div>
       </footer>
+      <SignupModal isOpen={isSignupOpen} onClose={() => setSignupOpen(false)} />
     </div>
   );
 };
