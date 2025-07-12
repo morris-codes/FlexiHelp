@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../assets/search_icon.png";
+import Logo from "../assets/logo.png";
 
 export default function Navbar() {
     return (
@@ -9,7 +10,7 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <div className="flex-1 flex justify-start">
-                    <div className="text-xl font-bold text-[#095CAF]">LOGO</div>
+                    <img src= {Logo} alt="I am an icon" className=""/>
                 </div>
 
                 {/* Search Bar */}
