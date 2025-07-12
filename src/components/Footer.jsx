@@ -31,7 +31,7 @@ export default function Footer() {
 
             {/* === Blue Footer Bottom === */}
             <div className="bg-[#095CAF] text-white mt-18 px-10 md:px-18 py-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 
                     {/* Left: Search Title & Input */}
                     <div>
@@ -46,29 +46,31 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Middle: Quick Links */}
-                    <div>
-                        <h5 className="text-xl font-medium mb-4">Quick Links</h5>
-                        <ul className="text-sm space-y-4 mb-6">
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>Payments</li>
-                            <li>How it works</li>
-                        </ul>
-                    </div>
-
-                    {/* Right: Contact Info */}
-                    <div>
-                        <h5 className="text-xl font-medium mb-4">Contact</h5>
-                        <ul className="text-sm space-y-4 mb-6">
-                            <li>LinkedIn</li>
-                            <li>Facebook</li>
-                            <li>Instagram</li>
-                            <li>Twitter</li>
-                            <li>support@flexihelp.gmail</li>
-                        </ul>
-                    </div>
-                </div>
+        <div className="flex justify-end">
+            <div className="grid grid-cols-2 gap-20 text-sm mt-30">
+              <div>
+                <h3 className="font-semibold mb-2">Quick Links</h3>
+                <ul className="space-y-1">
+                  <li><a href="/" className="hover:underline">Home</a></li>
+                  <li><a href="/about" className="hover:underline">About Us</a></li>
+                  <li><a href="/payments" className="hover:underline">Payments</a></li>
+                  <li><a href="/how-it-works" className="hover:underline">How it works</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Contact</h3>
+                <ul className="space-y-1">
+                  <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a></li>
+                  <li><a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:underline">Facebook</a></li>
+                  <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:underline">Instagram</a></li>
+                  <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:underline">Twitter</a></li>
+                  <li><a href="mailto:support@flexihelp.gmail" className="hover:underline">support@flexihelp.gmail</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+                    
+        </div>
 
                 <hr className="border-white/30 mb-7" />
                 <p className="text-xs text-left">© FlexiHelp 2025 All Rights Reserved</p>
