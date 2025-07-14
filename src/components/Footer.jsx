@@ -1,11 +1,11 @@
 import React from "react";
-
 import footerImg1 from "../assets/footer1.png";
 import footerImg2 from "../assets/footer2.png";
 import footerImg3 from "../assets/footer3.png";
 import searchIcon from "../assets/search_icon.png";
+import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({ onSignupClick }) {
     return (
         <footer className="bg-white text-[#0F172A] pt-20">
 
@@ -16,7 +16,7 @@ export default function Footer() {
                     <p className="text-2xl font-bold text-[#095CAF] mb-8">
                         <span className="text-[#FBBF24] font-bold">Sign up</span> to get the full experience
                     </p>
-                    <button className="bg-[#095CAF] text-white px-20 py-3 rounded-full font-medium">
+                    <button onClick={onSignupClick} className="bg-[#095CAF] text-white px-20 py-3 rounded-full font-medium">
                         Sign Up
                     </button>
                 </div>

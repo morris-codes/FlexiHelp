@@ -14,12 +14,12 @@ export default function Home() {
     return (
         <>
             <Navbar onSignupClick={() => setShowSignUpModal(true)} />
-            <Hero />
-            <ServiceCards />
+            <Hero onSignupClick={() => setShowSignUpModal(true)} />
+            <ServiceCards onSignupClick={() => setShowSignUpModal(true)} />
             <HowToBook />
             <Testimonials />
             <Faqs />
-            <Footer />
+            <Footer onSignupClick={() => setShowSignUpModal(true)} />
 
             <SignupModal
                 isOpen={showSignUpModal}

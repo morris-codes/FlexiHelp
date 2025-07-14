@@ -3,8 +3,9 @@ import icon1 from "../assets/electric_service.png";
 import icon2 from "../assets/mechanic_service.png";
 import icon3 from "../assets/carpenter_service.png";
 import locationIcon from "../assets/location_icon.png";
+import { Link } from "react-router-dom";
 
-export default function ServiceCards() {
+export default function ServiceCards({ onSignupClick }) {
 
     return (
         <section className="w-full px-6 md:px-16 py-16 bg-white text-[#0F172A]">
@@ -58,7 +59,7 @@ export default function ServiceCards() {
                         </div>
 
                         {/* Book Now Button */}
-                        <button className="bg-[#095CAF] text-white py-2 px-6 w-fit rounded-full text-sm hover:bg-blue-700 transition mx-auto">
+                        <button onClick={onSignupClick} className="bg-[#095CAF] text-white py-2 px-6 w-fit rounded-full text-sm hover:bg-blue-700 transition mx-auto">
                             Book Now
                         </button>
                     </div>

@@ -3,9 +3,9 @@ import image1 from "../assets/cook.png";
 import image2 from "../assets/makeup.png";
 import image3 from "../assets/carpenter.png";
 import image4 from "../assets/cleaner.png";
+import { Link } from "react-router-dom";
 
-
-export default function Hero() {
+export default function Hero({ onSignupClick }) {
     
     return (
         <section className="w-full min-h-screen bg-white text-[#0F172A] px-6 md:px-16 py-10">
@@ -21,10 +21,10 @@ export default function Hero() {
                     trusted service providers nearby. One time job, zero hassle.
                 </p>
                 <div className="mt-6 flex justify-center gap-4 flex-wrap">
-                    <button className="bg-[#095CAF] text-white px-14 py-2 rounded-2xl text-sm hover:bg-blue-800 font-semibold transition">
+                    <button onClick={onSignupClick} className="bg-[#095CAF] text-white px-14 py-2 rounded-2xl text-sm hover:bg-blue-800 font-semibold transition">
                         Book A Trusted Helper <span><img src="" alt="" /></span>
                     </button>
-                    <button className="border border-[#095CAF] text-[#095CAF] px-14 py-2 font-semibold rounded-2xl text-sm hover:bg-blue-50 transition">
+                    <button onClick={onSignupClick} className="border border-[#095CAF] text-[#095CAF] px-14 py-2 font-semibold rounded-2xl text-sm hover:bg-blue-50 transition">
                         Become A Service Provider
                     </button>
                 </div>
