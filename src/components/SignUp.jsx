@@ -1,148 +1,127 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function SignupModal({isOpen, onClose }) {
-
+export default function SignupModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const [role, setRole] = useState("user");
 
-  const switchRole = (newRole) => {
-    setRole(newRole);
-    };
-    
+  const switchRole = (newRole) => setRole(newRole);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/40">
-      <div className="bg-white w-full max-w-md rounded-xl shadow-2xl p-6 relative overflow-hidden">
-        <button onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-black">
+      <div className="bg-[#F9FAFB] w-full max-w-2xl rounded-2xl shadow-2xl py-7 px-6 relative overflow-visible">
+
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-5 left-4 text-gray-600 hover:text-black text-xl"
+        >
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold text-center mb-4">Sign Up</h2>
-        <p className="text-center mb-6 text-gray-600">Create your FlexiHelp account</p>
+        {/* Heading */}
+        <h2 className="text-2xl font-semibold text-[#1F2937] text-center">Sign Up</h2>
+        <p className="text-center text-[#1F2937] mb-6">Create your FlexiHelp account</p>
+        <p className="text-left text-[#1F2937] mb-3">Choose your role</p>
 
         {/* Role Toggle */}
-        <div className="flex justify-center mb-6 space-x-2">
+        <div className="flex justify-center gap-2 bg-gray-100 p-1 rounded-full mb-6 border border-[#0A66C2]">
           <button
             onClick={() => switchRole("user")}
-            className={`px-4 py-2 rounded-full font-medium transition ${
-              role === "user"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
+            className={`w-1/2 py-2 rounded-full text-sm font-medium transition ${
+              role === "user" ? "bg-[#B3D0EC] text-[#1F2937]" : "text-gray-700"
             }`}
           >
             User
           </button>
           <button
             onClick={() => switchRole("provider")}
-            className={`px-4 py-2 rounded-full font-medium transition ${
-              role === "provider"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
+            className={`w-1/2 py-2 rounded-full text-sm font-medium transition ${
+              role === "provider" ? "bg-[#B3D0EC] text-[#1F2937]" : "text-[#1F2937]"
             }`}
           >
             Service Provider
           </button>
         </div>
 
-        {/* Form Switch Animation */}
-        <div className="relative min-h-[300px]">
-          <AnimatePresence mode="wait">
-            {role === "user" ? (
-              <motion.div
-                key="user"
-                initial={{ x: -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: 300, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0"
-              >
-                <form className="flex flex-col gap-4">
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="First name"
-                      className="w-1/2 input-field"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      className="w-1/2 input-field"
-                    />
-                  </div>
+        {/* Animated Form Section */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={role}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.3 }}
+          >
+            <form className="flex flex-col gap-4">
+              {role === "user" && (
+                <div className="flex gap-3">
                   <input
                     type="text"
-                    placeholder="Email address / Phone number"
-                    className="input-field"
+                    placeholder="First name"
+                    className="w-1/2 border border-[#0A66C2] bg-[#D1D5DB] rounded-lg px-3 py-2 text-sm outline-none"
                   />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="input-field"
-                  />
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    className="input-field"
-                  />
-                  <label className="text-sm text-gray-600">
-                    <input type="checkbox" className="mr-2" />
-                    By signing up, you agree to FlexiHelp's <strong>Term of Service</strong> and <strong>Privacy Policy</strong>
-                  </label>
-                  <button type="submit" className="bg-blue-700 text-white py-2 rounded-lg font-medium">
-                    Sign Up
-                  </button>
-                </form>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="provider"
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0"
-              >
-                <form className="flex flex-col gap-4">
                   <input
                     type="text"
-                    placeholder="Email address / Phone number"
-                    className="input-field"
+                    placeholder="Last name"
+                    className="w-1/2 border border-[#0A66C2] bg-[#D1D5DB] rounded-lg px-3 py-2 text-sm outline-none"
                   />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="input-field"
-                  />
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    className="input-field"
-                  />
-                  <label className="text-sm text-gray-600">
-                    <input type="checkbox" className="mr-2" />
-                    By signing up, you agree to FlexiHelp's <strong>Term of Service</strong> and <strong>Privacy Policy</strong>
-                  </label>
-                  <button type="submit" className="bg-blue-700 text-white py-2 rounded-lg font-medium">
-                    Sign Up
-                  </button>
-                </form>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+                </div>
+              )}
 
-        {/* Social logins */}
+              <input
+                type="text"
+                placeholder="Email address / Phone number"
+                className="border border-[#0A66C2] bg-[#D1D5DB] rounded-lg px-3 py-2 text-sm outline-none"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="border border-[#0A66C2] bg-[#D1D5DB] rounded-lg px-3 py-2 text-sm outline-none"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="border border-[#0A66C2] bg-[#D1D5DB] rounded-lg px-3 py-2 text-sm outline-none"
+              />
+              <label className="text-sm text-gray-600">
+                <input type="checkbox" className="accent-[#0A66C2] mr-2" />
+                By signing up, you agree to FlexiHelp's <strong>Term of Service</strong> and <strong>Privacy Policy</strong>
+              </label>
+              <button
+                type="submit"
+                className="bg-[#0A66C2] text-white py-2 rounded-lg font-medium"
+              >
+                Sign Up
+              </button>
+
+               {/* Log in text */}
+              <p className="text-sm text-center text-[#1F2937] mt-2">
+                Already have an account?{" "}
+                <span className="text-[#0A66C2] font-semibold cursor-pointer hover:underline">
+                Log In
+                </span>
+              </p>
+            </form>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Social Logins */}
         <div className="text-center mt-6">
-          <p className="text-sm text-gray-500 mb-2">OR</p>
-          <div className="flex gap-4 justify-center">
-            <button className="flex items-center gap-2 border px-4 py-2 rounded">
-              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="google" className="h-5" />
+          <div className="flex items-center mb-4">
+            <hr className="flex-grow border-[#1F2937]" />
+            <span className="mx-4 text-sm font-bold text-[#1F2937]">OR</span>
+            <hr className="flex-grow border-[#1F2937]" />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="flex items-center gap-2 border border-[#0A66C2] bg-[#D1D5DB] px-4 py-2 rounded w-full justify-center">
+              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="google" className="h-5 mr-3" />
               Continue with Google
             </button>
-            <button className="flex items-center gap-2 border px-4 py-2 rounded">
-              <img src="https://www.svgrepo.com/show/303128/apple-logo.svg" alt="apple" className="h-5" />
+            <button className="flex items-center gap-2 border border-[#0A66C2] bg-[#D1D5DB] px-4 py-2 rounded w-full justify-center">
+              <img src="https://www.svgrepo.com/show/303128/apple-logo.svg" alt="apple" className="h-5 mr-3" />
               Continue with Apple
             </button>
           </div>
