@@ -395,7 +395,32 @@ const ServiceDiscoveryPage = () => {
           ))}
         </div>
       </section>
-
+{/* ✅ Nearby Providers */}
+      <section className="px-6 mt-14">
+        <h2 className="text-lg font-semibold mb-4">Service Providers Near You</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {nearby.map((item) => (
+            <div key={item.id} className="flex flex-col sm:flex-row items-center bg-white border border-blue-100 rounded-xl shadow-sm p-3 relative hover:shadow-md transition-transform hover:-translate-y-1">
+              <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-md mr-0 sm:mr-4 mb-3 sm:mb-0" />
+              <div className="flex-1 w-full">
+                <div className="absolute top-3 right-3">
+                  <FiBookmark className="text-gray-400 hover:text-blue-500 cursor-pointer" />
+                </div>
+                <h3 className="font-medium text-base mb-1">{item.name}</h3>
+                <div className="flex justify-between items-center text-sm text-gray-700 mb-3">
+                  <div className="flex items-center text-yellow-500">
+                    <FaStar className="mr-1" />{item.rating}
+                  </div>
+                  <div className="flex items-center">
+                    <FaMapMarkerAlt className="mr-1 text-blue-400" />{item.distance}
+                  </div>
+                </div>
+                <button className="border border-blue-500 text-blue-500 px-4 py-1 rounded-full hover:bg-blue-50 text-sm w-full sm:w-auto">View Details</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* ✅ Footer */}
       <footer className="bg-gradient-to-r from-[#003366] to-[#004080] text-white px-6 py-12 mt-20">
         <div className="max-w-7xl mx-auto">
