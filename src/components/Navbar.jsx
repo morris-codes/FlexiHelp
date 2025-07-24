@@ -61,7 +61,7 @@ import { Link } from "react-router-dom";
 import searchIcon from "../assets/search_icon.png";
 import Logo from "../assets/logo.png";
 
-export default function Navbar({ onSignupClick }) {
+export default function Navbar({ onSignupClick, onLoginClick}) {
     return (
         <header className="w-full px-6 md:px-16 py-4 bg-white shadow-sm">
             <div className="flex items-center justify-between gap-4">
@@ -95,17 +95,22 @@ export default function Navbar({ onSignupClick }) {
                 </div>
 
                 {/* Auth Buttons */}
-                <div className="flex-1 flex justify-end gap-3">
-                    <button className="border border-[#095CAF] text-[#095CAF] px-7 py-1.5 rounded-full text-sm">
-                        Log In
-                    </button>
-                    <button
-                        onClick={onSignupClick}
-                        className="bg-[#095CAF] text-white px-7 py-1.5 rounded-full text-sm"
-                    >
-                        Sign Up
-                    </button>
-                </div>
+<div className="flex-1 flex justify-end gap-3">
+  <button
+    onClick={onLoginClick}
+    className="border border-[#095CAF] text-[#095CAF] px-7 py-1.5 rounded-full text-sm"
+  >
+    Log In
+  </button>
+
+  <button
+    onClick={onSignupClick}
+    className="bg-[#095CAF] text-white px-7 py-1.5 rounded-full text-sm"
+  >
+    Sign Up
+  </button>
+</div>
+
             </div>
         </header>
     );
