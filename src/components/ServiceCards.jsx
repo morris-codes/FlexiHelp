@@ -63,14 +63,16 @@ export default function ServiceCards({ onSignupClick }) {
             </div>
 
             {/* Book Now Button */}
-            <div className="px-1">
-              <button
-                onClick={onSignupClick}
-                className="w-full bg-[#095CAF] text-white py-2 rounded-full text-sm hover:bg-blue-700 transition"
-              >
-                Book Now →
-              </button>
-            </div>
+            <div className="mt-3 px-1 flex justify-center">
+
+  <button
+    onClick={onSignupClick}
+    className="w-[203px] bg-[#095CAF] text-white py-2 rounded-full text-sm hover:bg-blue-700 transition"
+  >
+    Book Now →
+  </button>
+</div>
+
           </div>
         ))}
       </div>
