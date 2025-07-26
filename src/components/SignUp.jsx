@@ -166,25 +166,25 @@ export default function SignupModal({ isOpen, onClose }) {
             <hr className="flex-grow border-[#1F2937]" />
           </div>
 
-          <div className="flex gap-4 justify-center">
-            <button className="flex items-center justify-center gap-2 border border-[#0A66C2] bg-[#D1D5DB] px-4 py-2 rounded w-full">
-              <img
-                src="https://www.svgrepo.com/show/475656/google-color.svg"
-                alt="google"
-                className="h-5"
-              />
-              Continue with Google
-            </button>
-
-            <button className="flex items-center justify-center gap-2 border border-[#0A66C2] bg-[#D1D5DB] px-4 py-2 rounded w-full">
-              <img
-                src="https://www.svgrepo.com/show/183607/apple-logo.svg"
-                alt="apple"
-                className="h-5"
-              />
-              Continue with Apple
-            </button>
-          </div>
+          
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button className="flex items-center justify-center gap-2 border border-[#0A66C2] bg-[#F3F4F6] px-4 py-2 rounded w-full text-sm">
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="Google"
+                  className="h-5"
+                />
+                Continue with Google
+              </button>
+              <button className="flex items-center justify-center gap-2 border border-[#0A66C2] bg-[#F3F4F6] px-4 py-2 rounded w-full text-sm">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                  alt="Apple"
+                  className="h-5"
+                />
+                Continue with Apple
+              </button>
+            </div>
         </div>
       </div>
     </div>

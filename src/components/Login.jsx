@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { PeopleTeamToolbox24Filled } from '@fluentui/react-icons'; // ✅ NEW ICON IMPORT
 
 export default function LoginModal({ isOpen, onClose }) {
   const [role, setRole] = useState("user");
@@ -53,7 +54,7 @@ export default function LoginModal({ isOpen, onClose }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -30 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-[16px] w-[782px]  p-6 shadow-lg relative"
+        className="bg-white rounded-[16px] w-[782px] px-10 py-8 shadow-lg relative flex flex-col items-center"
       >
         <button
           onClick={onClose}
@@ -68,8 +69,8 @@ export default function LoginModal({ isOpen, onClose }) {
         </p>
 
         {/* Role Switch */}
-        <div className="flex justify-center mb-5">
-          <div className="relative flex w-full max-w-[640px] mx-auto border border-[#0A66C2] rounded-full bg-gray-100 overflow-hidden px-[6px] py-[6px]">
+        <div className="flex justify-center mb-5 w-full">
+          <div className="relative flex w-full max-w-[650px] border border-[#0A66C2] rounded-full bg-gray-100 overflow-hidden px-[6px] py-[6px]">
             <motion.div
               layout
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -88,11 +89,12 @@ export default function LoginModal({ isOpen, onClose }) {
               </button>
               <button
                 onClick={() => setRole("provider")}
-                className={`flex-1 py-2 text-sm font-medium rounded-full transition ${
+                className={`flex-1 py-2 text-sm font-medium rounded-full flex items-center justify-center gap-1 transition ${
                   role === "provider" ? "text-[#1F2937]" : "text-gray-600"
                 }`}
               >
-                🧰 Service Provider
+                <PeopleTeamToolbox24Filled className="w-5 h-5" />
+                Service Provider
               </button>
             </div>
           </div>
@@ -106,12 +108,13 @@ export default function LoginModal({ isOpen, onClose }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
+            className="w-full flex flex-col items-center"
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-[650px]">
               <select
                 value={loginType}
                 onChange={(e) => setLoginType(e.target.value)}
-                className="w-full border border-gray-400 rounded px-3 py-2 bg-white text-sm"
+                className="w-full h-[30px] border border-gray-400 rounded px-3 bg-white text-sm"
               >
                 <option value="email">Email Address</option>
                 <option value="phone">Phone Number</option>
@@ -122,16 +125,16 @@ export default function LoginModal({ isOpen, onClose }) {
                 value={emailOrPhone}
                 onChange={(e) => setEmailOrPhone(e.target.value)}
                 placeholder={loginType === "email" ? "example@gmail.com" : "e.g. 08012345678"}
-                className="w-full border border-gray-400 rounded px-3 py-2 bg-white text-sm"
+                className="w-full h-[30px] border border-gray-400 rounded px-3 bg-white text-sm"
               />
 
-              <div className="relative">
+              <div className="relative w-full">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Abc123@#"
-                  className="w-full border border-gray-400 rounded px-3 py-2 bg-white text-sm pr-10"
+                  className="w-full h-[30px] border border-gray-400 rounded px-3 pr-10 bg-white text-sm"
                 />
                 <button
                   type="button"
@@ -180,13 +183,13 @@ export default function LoginModal({ isOpen, onClose }) {
               </span>
             </p>
 
-            <div className="flex items-center mt-5 mb-4">
+            <div className="flex items-center mt-5 mb-4 w-full max-w-[650px]">
               <hr className="flex-grow border-gray-300" />
               <span className="mx-4 text-sm text-gray-500 font-medium">OR</span>
               <hr className="flex-grow border-gray-300" />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-[650px]">
               <button className="flex items-center justify-center gap-2 border border-[#0A66C2] bg-[#F3F4F6] px-4 py-2 rounded w-full text-sm">
                 <img
                   src="https://www.svgrepo.com/show/475656/google-color.svg"

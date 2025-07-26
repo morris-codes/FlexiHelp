@@ -30,32 +30,33 @@ export default function Hero({ onSignupClick }) {
                 </div>
             </div>
 
-            {/* Image Section */}
-            <div className="mt-14 flex justify-between gap-6 flex-wrap">
-                <div className="w-56 h-80 rounded-xl overflow-hidden">
-                    <img src={image1} alt="Provider 1" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-56 h-80 rounded-xl overflow-hidden">
-                    <img src={image2} alt="Provider 2" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-56 h-80 rounded-xl overflow-hidden">
-                    <img src={image3} alt="Provider 3" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-56 h-80 rounded-xl overflow-hidden">
-                    <img src={image4} alt="Provider 4" className="w-full h-full object-cover" />
-                </div>
-            </div>
+      <div className="mx-auto mt-[60px] w-[1402.5px] h-[438px] flex gap-[30px]">
+  {[image1, image2, image3, image4].map((img, idx) => (
+    <div
+      key={idx}
+      className="flex-1 rounded-xl overflow-hidden"
+    >
+      <img
+        src={img}
+        alt={`Provider ${idx + 1}`}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ))}
+</div>
+
 
 
             {/* What We Do Section */}
-            <div className="mt-16 bg-[#F8FAFC] py-12 px-4 rounded-xl shadow-sm max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold mb-4">
-                    What We Do <span className="text-yellow-500">?</span>
-                </h2>
-                <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
-                    We connect you with trusted, verified service providers in your area all in one app. Whether you need help once in a while or just for today, we’re built for speed, trust, and convenience. No more guessing. No more waiting. Just help, when you need it. From trying to get a plumber who shows up, to searching endlessly for someone to clean your space or fix a quick issue, Flexihelp makes it simple.
-                </p>
-            </div>
+            {/* What We Do Section */}
+<div className="mt-16 bg-whitesmoke px-7 py-4 rounded-[20px] border border-gray-200 shadow-sm max-w-[1290px] mx-auto opacity-100">
+  <h2 className="text-2xl font-bold mb-3">
+    What We Do <span className="text-yellow-500">?</span>
+  </h2>
+  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+    We connect you with trusted, verified service providers in your area all in one app. Whether you need help once in a while or just for today, we’re built for speed, trust, and convenience. No more guessing. No more waiting. Just help, when you need it. From trying to get a plumber who shows up, to searching endlessly for someone to clean your space or fix a quick issue, Flexihelp makes it simple.
+  </p>
+</div>
         </section>
     );
 }
