@@ -63,7 +63,7 @@ export default function ServiceCards({ onSignupClick }) {
             </div>
 
             {/* Book Now Button */}
-            <div className="mt-3 px-1 flex justify-center">
+            <div className="mt-3 px-1 flex justify-start">
 
   <button
     onClick={onSignupClick}
