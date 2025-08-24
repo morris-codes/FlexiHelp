@@ -757,7 +757,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToSignup }) {
         await signInWithEmailAndPassword(auth, emailOrPhone, password);
         alert("Login successful!");
         onClose();
-        navigate("/services");
+        navigate("/profile");
       } catch (error) {
         console.error(error);
         setError("Incorrect email or password");
